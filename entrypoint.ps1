@@ -21,6 +21,9 @@ $credentials = New-Object System.Management.Automation.PSCredential($clientId, $
 
 $connected = Connect-AzAccount -ServicePrincipal -Credential $credentials -Tenant $tenantId -SubscriptionId $subscriptionId
 
+$ResourceGroupName=$ResourceGroupName.Trim()
+$AppName=$AppName.Trim()
+
 $profile = ""
 
 if ([System.Convert]::ToBoolean($Reset) -eq $true) {
